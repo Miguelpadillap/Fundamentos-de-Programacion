@@ -1,0 +1,44 @@
+Algoritmo sin_titulo
+	m=0
+	h=0
+	Mostrar "escriba la hora inicial"
+	Leer hi
+	Mostrar "escriba el minuto inicial"
+	Leer mi
+	Mostrar " escriba el segundo inicial"
+	Leer segi
+	Mostrar "---------------------------"
+	Mostrar "escriba la hora final"
+	Leer hf
+	Mostrar "escriba el minuto final"
+	Leer mf
+	Mostrar " escriba el segundo final"
+	Leer segf
+	hif=hi*3600
+	mif=mi*60
+	fi=hif+mif+segi
+	hff=hf*3600
+	mff=mf*60
+	ff=hff+mff+segf
+	si fi>ff Entonces
+		Mostrar " la hora inicial es mayor que la final"
+	SiNo
+		fff=ff-fi
+		si fff>=60 Entonces
+			Mientras fff>=60 Hacer
+				m=m+1
+				fff=fff-60
+				si m=60 Entonces
+					m=0
+					h=h+1
+				FinSi
+			Fin Mientras
+			seg=fff
+			Mostrar " la diferecia es de ", h, " hora ", m," minutos ",seg," segundos"
+		SiNo
+			si fff>0 Entonces
+				Mostrar " paso ",fff," segunos"
+			FinSi
+		FinSi
+	FinSi
+FinAlgoritmo
