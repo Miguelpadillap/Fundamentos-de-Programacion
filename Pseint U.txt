@@ -1,0 +1,25 @@
+Algoritmo calcularTiempoTranscurrido
+    Definir horaInicial, minutoInicial, segundoInicial, horaFinal, minutoFinal, segundoFinal, totalSegundos, tiempoTranscurrido, horas, minutos, segundos Como Entero
+	
+    Escribir "Ingrese la hora inicial:"
+    Leer horaInicial
+    Escribir "Ingrese los minutos iniciales:"
+    Leer minutoInicial
+    Escribir "Ingrese los segundos iniciales:"
+    Leer segundoInicial
+	
+    Escribir "Ingrese la hora final:"
+    Leer horaFinal
+    Escribir "Ingrese los minutos finales:"
+    Leer minutoFinal
+    Escribir "Ingrese los segundos finales:"
+    Leer segundoFinal
+	
+    totalSegundos <- ((horaFinal * 3600 + minutoFinal * 60 + segundoFinal) - (horaInicial * 3600 + minutoInicial * 60 + segundoInicial))
+	
+    horas <- trunc(totalSegundos / 3600)
+    minutos <- trunc((totalSegundos % 3600) / 60)
+    segundos <- totalSegundos % 60
+	
+    Escribir "El tiempo transcurrido es: ", horas, " horas ", minutos, " minutos y ", segundos, " segundos."
+FinAlgoritmo
