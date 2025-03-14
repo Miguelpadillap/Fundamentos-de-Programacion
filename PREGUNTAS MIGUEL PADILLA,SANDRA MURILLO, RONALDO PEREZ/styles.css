@@ -1,0 +1,102 @@
+body {
+    background-color: #f0f4f8;
+    font-family: Arial, sans-serif;
+}
+
+/* Pantalla de bienvenida */
+.welcome-card {
+    max-width: 40rem;
+    margin: 50px auto;
+    padding: 30px;
+    background-color: #e9f7ef;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.welcome-card h1 {
+    color: #6b7280;
+    font-size: 2em;
+}
+
+.welcome-card p {
+    color: #9ca3af;
+    font-size: 1.2em;
+}
+
+.btn-start {
+    background-color: #a7f3d0;
+    color: #065f46;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1.1em;
+    border-radius: 10px;
+    transition: background-color 0.3s;
+}
+
+.btn-start:hover {
+    background-color: #6ee7b7;
+}
+
+/* Cuestionario */
+.card {
+    max-width: 35rem;
+    margin: 20px auto;
+    background-color: #f3e8ff;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.card-header {
+    background-color: #d8b4fe;
+    color: #4c1d95;
+}
+
+.card-body {
+    background-color: #f3e8ff;
+}
+
+.btn-primary {
+    background-color: #a5b4fc;
+    border: none;
+}
+
+.btn-primary:hover {
+    background-color: #818cf8;
+}
+
+.btn-success {
+    background-color: #a7f3d0;
+    border: none;
+}
+
+.btn-success:hover {
+    background-color: #6ee7b7;
+}
+
+/* Resultados */
+.resultado-casilla {
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 5px;
+    color: white;
+}
+
+.correcta {
+    background-color: #34d399;
+}
+
+.incorrecta {
+    background-color: #f87171;
+}
+
+.nota {
+    font-weight: bold;
+    font-size: 1.2em;
+    margin-top: 15px;
+    color: #4c1d95;
+}
+
+.d-none {
+    display: none;
+}
