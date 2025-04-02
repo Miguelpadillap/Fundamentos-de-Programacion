@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Alumnos</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="app">
+        <table>
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>No Vino</th>
+                    <th>Sí Vino</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr v-for="(alumno, index) in alumnos" :key="index" 
+                    :class="{ 'no-vino': alumno.noVino, 'si-vino': alumno.siVino }">
+                    <td>{{ alumno.nombre }}</td>
+                    <td>
+                        <button @click="marcarNoVino(index)">No Vino</button>
+                    </td>
+                    <td>
+                        <button @click="marcarSiVino(index)">Sí Vino</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="contadores">
+            <p>Total vinieron: {{ contarSiVino }}</p>
+            <p>Total no vinieron: {{ contarNoVino }}</p>
+            <p>Sin seleccionar: {{ contarSinSeleccionar }}</p>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script>
+        const { createApp } = Vue;
+
+        createApp({
+            data() {
+                return {
+                    alumnos: [
+                        { nombre: "Juan Pérez", noVino: false, siVino: false },
+                        { nombre: "María Gómez", noVino: false, siVino: false },
+                        { nombre: "Carlos López", noVino: false, siVino: false },
+                        { nombre: "Ana Martínez", noVino: false, siVino: false },
+                        { nombre: "Pedro Sánchez", noVino: false, siVino: false },
+                        { nombre: "Sofía Rodríguez", noVino: false, siVino: false },
+                        { nombre: "Luis Fernández", noVino: false, siVino: false },
+                        { nombre: "Elena García", noVino: false, siVino: false },
+                        { nombre: "Diego Torres", noVino: false, siVino: false },
+                        { nombre: "Laura Ramírez", noVino: false, siVino: false },
+                        { nombre: "Miguel Ángel", noVino: false, siVino: false },
+                        { nombre: "Carmen Ruiz", noVino: false, siVino: false },
+                        { nombre: "Javier Díaz", noVino: false, siVino: false },
+                        { nombre: "Isabel Morales", noVino: false, siVino: false },
+                        { nombre: "Roberto Castro", noVino: false, siVino: false }
+                    ]
+                }
+            },
+            methods: {
+                marcarNoVino(index) {
+                    this.alumnos[index].noVino = true;
+                    this.alumnos[index].siVino = false;
+                },
+                marcarSiVino(index) {
+                    this.alumnos[index].noVino = false;
+                    this.alumnos[index].siVino = true;
+                }
+            },
+            computed: {
+                contarSiVino() {
+                    return this.alumnos.filter(alumno => alumno.siVino).length;
+                },
+                contarNoVino() {
+                    return this.alumnos.filter(alumno => alumno.noVino).length;
+                },
+                contarSinSeleccionar() {
+                    return this.alumnos.filter(alumno => !alumno.noVino && !alumno.siVino).length;
+                }
+            }
+        }).mount('#app');
+    </script>
+</body>
+</html>

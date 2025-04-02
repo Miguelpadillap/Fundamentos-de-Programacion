@@ -1,0 +1,168 @@
+:root {
+    --verde-oscuro: #fdfdfd;
+    --verde-medio: #8bdeff;
+    --naranja: #ffffff;
+    --marron: #37c6ff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(135deg, var(--verde-oscuro), var(--verde-medio));
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--naranja);
+    padding: 20px;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+#app {
+    width: 100%;
+    max-width: 1200px;
+    background: var(--verde-medio);
+    border-radius: 20px;
+    padding: 25px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(5px);
+}
+
+table {
+    width: 100%;
+    border-spacing: 8px;
+}
+
+th, td {
+    padding: 12px;
+    text-align: center;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+th {
+    background: var(--marron);
+    color: var(--naranja);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+
+td {
+    background: rgba(219, 159, 117, 0.15);
+    color: var(--naranja);
+}
+
+.no-vino {
+    background: rgba(252, 112, 112, 0.993); /* Rojo con transparencia */
+    transform: scale(0.98);
+}
+
+.si-vino {
+    background: rgb(110, 110, 255); /* Azul con transparencia */
+    transform: scale(0.98);
+}
+
+button {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    background: linear-gradient(45deg, var(--marron), var(--naranja));
+    color: var(--verde-oscuro);
+    box-shadow: 0 4px 15px rgba(128, 72, 18, 0.3);
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s ease;
+}
+
+button::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.6s ease, height 0.6s ease;
+}
+
+button:hover::before {
+    width: 300px;
+    height: 300px;
+}
+
+button:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 6px 20px rgba(128, 72, 18, 0.5);
+}
+
+button:active {
+    transform: translateY(1px);
+    box-shadow: 0 2px 10px rgba(128, 72, 18, 0.2);
+}
+
+.contadores {
+    margin-top: 25px;
+    padding: 15px;
+    background: rgba(47, 58, 50, 0.3);
+    border-radius: 15px;
+    border: 2px solid var(--marron);
+    backdrop-filter: blur(3px);
+}
+
+.contadores p {
+    margin: 8px 0;
+    font-size: 1.2em;
+    font-weight: 500;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 768px) {
+    #app {
+        padding: 15px;
+    }
+
+    th, td {
+        padding: 8px;
+        font-size: 0.9em;
+    }
+
+    button {
+        padding: 6px 12px;
+        font-size: 0.9em;
+    }
+
+    .contadores p {
+        font-size: 1em;
+    }
+}
+
+@media (max-width: 480px) {
+    th, td {
+        padding: 6px;
+        font-size: 0.8em;
+    }
+
+    button {
+        padding: 5px 10px;
+        font-size: 0.8em;
+    }
+
+    .contadores {
+        padding: 10px;
+    }
+
+    .contadores p {
+        font-size: 0.9em;
+    }
+}
